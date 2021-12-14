@@ -15,11 +15,16 @@
     </div>
     <script>
         const App = {    
-                data() {
-                    return {
-                        counter: 0
-                    }
+            data() {
+                return {
+                    counter: 0
                 }
+            },
+            mounted() {
+                setInterval(() => {
+                    this.counter++
+                }, 1000)
+            }
         }
         Vue.createApp(App).mount('#app')
     </script>
