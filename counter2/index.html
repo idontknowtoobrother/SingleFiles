@@ -10,13 +10,13 @@
 <body>
     <h1>
         <div id="app">
-            <button>
+            <button @click="minus">
                 -
             </button>
             {{
                 counter
             }}
-            <button>
+            <button @click="plus">
                 +
             </button>
         </div>
@@ -26,6 +26,14 @@
             data() {
                 return {
                     counter: 0
+                }
+            },
+            methods: {
+                plus(){
+                    this.counter++
+                },
+                minus(){
+                    this.counter = this.counter-1<0 ? 0 : this.counter-1
                 }
             }
         }
