@@ -9,10 +9,15 @@
 </head>
 <body>
     <div id="app">
+
         <span style="color: red;">{{ debug }}</span>
         <h1><div v-if='booleanFirst'>Show if Boolean 1 == true</div>
         <div v-if='booleanSecond'>Show if Boolean 2 == true</div></h1>
-        <button v-on:click="booleanFirst = !booleanFirst; booleanSecond = !booleanSecond; refresh();"> Switch Boolean ( v-on:click )</button>
+
+        <button v-on:click="booleanFirst = !booleanFirst; booleanSecond = !booleanSecond; refresh();"> Switch Boolean
+            <span style="font-weight: bold; font-size: 16px;">[ v-on:click ]</span></button>
+        <button @click="switchBool()"> Switch Boolean <span style="font-weight: bold; font-size: 16px;">[ @click ]</span></button>
+
     </div>
 
     <script>
@@ -25,6 +30,11 @@
                 } 
             },
             methods:{
+                switchBool(){
+                    this.booleanFirst = !this.booleanFirst;
+                    this.booleanSecond = !this.booleanSecond;
+                    this.refresh()
+                },
                 refresh(){
                     this.debug = `Boolean 1 : ${this.booleanFirst} Boolean 2 : ${this.booleanSecond}`
                 }
