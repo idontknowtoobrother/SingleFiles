@@ -9,7 +9,10 @@
 </head>
 <body>
     <div id="app">
-        {{ debuging }}
+        <span style="color: red;">{{ debug }}</span>
+        <h1><div v-if='booleanFirst'>Show if Boolean 1 == true</div>
+        <div v-if='booleanSecond'>Show if Boolean 2 == true</div></h1>
+        <button v-on:click="booleanFirst = !booleanFirst; booleanSecond = !booleanSecond; refresh();"> Switch Boolean ( v-on:click )</button>
     </div>
 
     <script>
@@ -18,11 +21,13 @@
                 return {
                     booleanFirst : false,
                     booleanSecond : true,
-                    debuging : `Boolean 1 : ${this.booleanFirst}<br>Boolean 2 : ${this.booleanSecond}`
+                    debug : 'debugging will show after click any switch'
                 } 
             },
             methods:{
-
+                refresh(){
+                    this.debug = `Boolean 1 : ${this.booleanFirst} Boolean 2 : ${this.booleanSecond}`
+                }
             }
         }
 
