@@ -9,7 +9,8 @@
 </head>
 <body>
     <div id="app">
-        <input type='text' placeholder="Input your C Temp (Number Type)" v-model='cTemp'>
+        <input type='text' placeholder="Input C Temp (Number Type)" v-model='cTemp'>
+        <div style="color:red; font-size: 16px; font-weight: bolder;"> F Temp: {{ fTemp }} </div>
     </div>
     <script>
         const App = {    
@@ -19,7 +20,10 @@
                 }
             },
             computed: {
-                
+                fTemp(){
+                    if (this.cTemp.length < 1) return '-' ; 
+                    return 1.8*this.cTemp+32 || '-' ; 
+                }
             }
         }
         Vue.createApp(App).mount('#app')
