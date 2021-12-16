@@ -9,10 +9,22 @@
 </head>
 <body>
     <div id="app">
+        {{ msg }}
     </div>
 
     <script>
-       
+        const App = {
+            data(){
+                return {
+                    msg : 'testing MSG'
+                } 
+            },
+            methods:{
+
+            }
+        }
+
+        Vue.createApp(App).mount('#app')
     </script>
 </body>
 </html>
