@@ -9,15 +9,21 @@
 </head>
 <body>
     <div id="app">
-        <input type='password'>
-        {{ msg }}
+        <input type='text' v-model='account'>
+        {{ account }}<br>
+        <input type='password' v-model='passwords'>
+        {{ passwords }}<br>
+        <input type='number' v-model='numberCycle'>
+        {{ numberCycle }}<br>
     </div>
 
     <script>
         const App = {
             data(){
                 return {
-                    msg : 'testing MSG'
+                    account : 'Waiting..',
+                    passwords : 'Waiting..',
+                    numberCycle : 'Waiting..',
                 } 
             },
             methods:{
