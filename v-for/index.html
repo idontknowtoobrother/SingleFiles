@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="app">
-        {{ arrs }}
+        <h1 v-for="aIndex in arrs" v-bind:key="aIndex.id"> {{ aIndex.id }} {{ aIndex.item }} {{ aIndex.count }} </h1>
     </div>
 
     <script>
