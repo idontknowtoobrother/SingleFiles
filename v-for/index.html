@@ -10,6 +10,11 @@
 <body>
     <div id="app">
         <h1 v-for="aIndex in arrs" v-bind:key="aIndex.id"> {{ aIndex.id }} {{ aIndex.item }} {{ aIndex.count }} </h1>
+        <ol>
+            <li v-for="aIndex in arrs" :key="aIndex.id" :value="aIndex.id" :id="aIndex.id">
+                {{ aIndex.item }} {{ aIndex.count }}
+            </li>
+        </ol>
     </div>
 
     <script>
