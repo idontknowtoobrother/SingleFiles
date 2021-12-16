@@ -9,14 +9,16 @@
 </head>
 <body>
     <div id="app">
-       
+        {{ debuging }}
     </div>
 
     <script>
         const App = {
             data(){
                 return {
-                  
+                    booleanFirst : false,
+                    booleanSecond : true,
+                    debuging : `Boolean 1 : ${this.booleanFirst}<br>Boolean 2 : ${this.booleanSecond}`
                 } 
             },
             methods:{
